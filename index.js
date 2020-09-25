@@ -1,4 +1,3 @@
-
 var userClickedPattern = [];
 var gamePattern = [];
 var buttonColours = ["red","blue","green","yellow"];
@@ -17,6 +16,18 @@ $(document).keydown(fucntion(){
    }
 
 });
+
+$(".btn").click(function() {
+
+  var userChosenColour = $(this).attr("id");
+  userClickedPattern.push(userChosenColour);
+
+  playSound(userChosenColour);
+  animatePress(userChosenColour);
+
+  checkAnswer(userClickedPattern.length-1);
+});
+
 
 // function for the next sequence by the machine. 
 
